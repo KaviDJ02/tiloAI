@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+  background-color: #121212;
+  color: white
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.center-element {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.black-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.animated-gradient {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  transform: translate3d(0, 0, 0);
+  background-color: black;
+  background-image: 
+    radial-gradient(circle at 20% 30%,   #FFD000 0, transparent 25%),
+    radial-gradient(circle at 80% 20%,   #1A73E8 0, transparent 30%),
+    radial-gradient(circle at 50% 75%,   #8904D6 0, transparent 20%),
+    radial-gradient(circle at 90% 90%,   #FFD000 0, transparent 15%),
+    linear-gradient(90deg, #000b09 0%, #8904D6 100%);
+  background-size: 
+    200% 200%,
+    150% 150%,
+    120% 120%, 
+    100% 100%, 
+    100% 100%;
+  animation: glow 5s infinite;
+  animation-delay: .8s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    background-size:
+      200% 200%,
+      150% 150%,
+      120% 120%, 
+      100% 100%, 
+      100% 100%;
+    background-position: 
+      20% 30%,
+      80% 20%,
+      50% 75%,
+      90% 90%,
+      center;
+  }
+  50% {
+    background-size:
+      250% 250%,
+      175% 175%,
+      140% 140%, 
+      110% 110%, 
+      100% 100%;
+    background-position: 
+      30% 40%,
+      70% 10%,
+      60% 85%,
+      25% 95%,
+      center;
+  }
+  100% {
+    background-size:
+      200% 200%,
+      150% 150%,
+      120% 120%, 
+      100% 100%, 
+      100% 100%;
+    background-position: 
+      25% 70%,
+      75% 15%,
+      40% 80%,
+      85% 60%,
+      center;
+  }
+}
+
