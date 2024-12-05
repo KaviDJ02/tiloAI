@@ -10,7 +10,7 @@ const Page3 = () => {
             transition={{ duration: 1.5, ease: "easeOut" }}
         > 
         <div className="wrapper center-element">
-          
+               
         </div>
         </motion.div>
   )
